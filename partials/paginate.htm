@@ -1,0 +1,17 @@
+<div class="pagination pagination">
+    <ul>
+        <li class="switcher" num="prev" ng-click="handleNav($event, start*1,'prev')">
+            <a href="javascript:void(0);" >←</a>
+        </li>
+
+        <li ng-repeat='ii in [start, stop] | makeRange' 
+            ng-class="{switcher: true, active: ($index === current)}" 
+            num="$index" ng-click="handleNav($event, start*1, $index)">
+            <a href="javascript:void(0);" >{{start*1+$index}}</a>
+        </li>
+
+        <li class="switcher" num="next" ng-click="handleNav($event, start*1, 'next')">
+            <a href="javascript:void(0);" >→</a>
+        </li>
+    </ul>
+</div>

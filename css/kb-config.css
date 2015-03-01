@@ -1,0 +1,60 @@
+/*
+	CSS for the keyboard-configurer control
+*/
+
+#kb-config-container {
+    position: relative;
+    text-align: center;
+}
+
+.kb-config-container .form-horizontal .control-label {
+    width:120px;
+}
+
+.kb-config-container .form-horizontal .controls {
+    margin-left: 130px;
+}
+
+.kb-config-keyboard {
+
+}
+
+.kb-config-table {
+	border:0;
+    margin-top:14px;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+.kb-config-table th {
+    padding-bottom:4px;
+}
+
+ .kb-config-td {
+ 	vertical-align:top;
+ }
+
+.kb-config-editor {
+    text-align:left;
+}
+
+.kb-config-leftarrow {
+    background-image:url("../img/left-arrow.png");
+    height:48px;
+    width:48px;
+    cursor:pointer;
+    opacity: 0.75;
+    float:left;
+}
+.kb-config-rightarrow {
+    background-image:url("../img/right-arrow.png");
+    height:48px;
+    width:48px;
+    cursor:pointer;
+    opacity: 0.75; 
+    float:right;
+}
+.kb-config-leftarrow:hover, .kb-config-rightarrow:hover {
+    opacity:1;	
+}
+

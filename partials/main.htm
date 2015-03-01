@@ -1,0 +1,32 @@
+<div>
+    <div class="jumbotron subhead">
+        <h1>Analyze Text Input</h1>
+        <p class="lead">See which layout is best for your input text<p>
+    </div>
+    <form class='form-horizontal'>
+        <div class='control-group'>
+            <label class='control-label' for='txt-input'>Text to Analyze:</label>
+            <div class='controls'>
+                <textarea id='txt-input' class='input-block-level' ng-model='data.text'></textarea>
+            </div>
+        </div>
+
+        <div class='control-group'>
+            <label class='control-label' for='text-presets'>Text Presets:</label>
+            <div class='controls'>
+                <select id='text-presets' ng-model='data.textPreset'>
+                    <option value='' selected>[Select Text to Load]</option>
+                    <option value='alice-ch1' selected>English: Alice in Wonderland, Chapter 1</option>
+                    <option value='common-english-words'>English: List of the most commonly used words</option>
+                    <option value='common-sat-words'>English: Most commonly used SAT words</option>
+                </select>
+                <button class='btn' type='button' ng-click='applyPreset()'>Apply</button>
+            </div>
+        </div>
+        <div class='control-group'>
+            <div class='controls'>
+                <button class="btn btn-large" type="button" ng-click="generateOutput(data.text)">See Which Layout is Best</button>
+            </div>
+        </div>
+    </form>
+</div>

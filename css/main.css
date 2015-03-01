@@ -1,0 +1,314 @@
+body {
+    /*
+    background-image: url('/common/images/bgs/white_wall_hash.png');
+
+#1abc9c -> #0088cc
+#1dd2af -> #005580
+    */
+    background-image: url('/common/images/bgs/shattered.png');
+    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+
+/*
+    Controls
+*/
+
+h1 {
+    /*font-family: 'Ubuntu Mono', sans-serif;*/
+    padding-bottom:0px;
+    margin-top:0;
+}
+
+#txt-input {
+    height: 200px;
+}
+
+#view-container {
+    padding-top:16px;
+}
+
+#view-container, #view {
+    position:relative;
+}
+
+#main-output {
+    display:none;
+}
+
+.try-again-btn {
+    margin-top:21px;
+    margin-bottom:21px;
+}
+
+.best-layout {
+    text-align:center;
+    font-size:26px;
+    font-weight:bold;
+    margin-top:2px;
+    margin-bottom:22px;
+}
+
+#kla-loading {
+    padding:50px;
+}
+#kla-loading {
+    display:none;
+}
+#kla-loading.ng-cloak {
+    display:block;
+}
+
+.loading-container {
+    padding:50px;
+}
+
+/*
+    Config
+*/
+
+.modal-body .form-horizontal .control-group .control-label {
+    width:60px;
+}
+
+.modal-body .form-horizontal .control-group .controls {
+    margin-left:80px;
+}
+
+/*
+    Results
+*/
+
+.tab-pane {
+    position:relative;
+}
+
+.kla-result-opts {
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.kla-chart-tooltip {
+    position:absolute;
+    display:none;
+    background-color:#2C3E4F;
+    color:#f0f0f0;
+    border-radius:5px;
+    padding:4px;
+}
+
+.kla-legend-item {
+    margin-right:5px;
+}
+
+.kla-legend-block {
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 4px;
+    margin-top:0;
+    border-radius: 4px;
+    border: 1px solid white;
+}
+
+.kla-display-opts-header {
+    padding-top:20px;
+    padding-bottom:15px;
+}
+
+.kla-pie-header {
+    padding-top:0px;
+    padding-bottom:0;
+    margin-bottom:0;
+}
+
+.kla-piecharts {
+    margin-top:60px;
+    min-height:250px;
+}
+
+.kla-pie-container {
+    display: inline-block;
+    
+    margin:35px;
+}
+
+.kla-pie-label {
+    text-align:center;
+    font-weight:bold;
+}
+
+.kla-result-checkbox {
+    vertical-align:top;
+    margin-top:5px;
+}
+
+.kla-misc-spacing {
+    height:50px;
+}
+
+/*
+    Result table
+*/
+
+.kla-table-data {
+    margin:0 auto;
+    border-collapse: collapse;
+    width:100%;
+    margin-top:20px;
+}
+
+.kla-table-data-narrow {
+    width:400px;
+}
+
+.kla-table-data-text {
+    font-size:13px;
+}
+
+.kla-padding-left {
+    padding-left:8px;
+}
+
+.kla-padding-left-total {
+    padding-left:20px;
+}
+
+.kla-table-data tr {
+    color: #666666;
+}
+.kla-table-data tr:hover {
+    color: #000000;
+}
+
+.kla-table-data th {
+    border-bottom-width:2px;
+    border-bottom-style:solid;
+    border-color: #476FB2;
+    color: #000000;
+}
+
+.kla-table-data td {
+    border-bottom-width:1px;
+    border-bottom-style:solid;
+    border-color: #476FB2;
+    text-align: center;
+}
+
+/*
+    Helper classes
+*/
+
+.show-inline, .showinline {
+    display:inline-block;
+}
+
+/*
+    Directive stuff
+*/
+
+.kb-config-dialog-txt {
+    height: 120px;
+}
+
+/*
+    Bootstrap Additions
+*/
+
+.kla-pill {
+    margin-right:4px;
+}
+
+/*
+    jqPlot Overrides
+*/
+
+
+/*
+    Animation
+*/
+
+.page.ng-enter {
+    -webkit-transition: 0.4s linear all; /* Chrome */
+    transition: 0.4s linear all;
+    opacity: 0;
+}
+ 
+.page.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+
+/*
+    Footer
+*/
+
+#footer {
+    text-align:center;
+}
+
+#footer-col-set {
+    color: #888888;
+    padding: 5px;
+
+    margin: 15px;
+    margin-top:0px;
+
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    border-radius:15px;
+    margin-bottom:30px;
+}
+
+.footer-col-header {
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+#footer-col-set .footer-col:first-child {
+    border: none;
+}
+
+.footer-col-fixed-width {
+    width:220px;
+}
+
+.footer-col {
+    text-align:left;
+    float: left;
+    margin: 10px 0;
+    padding: 0 15px;
+    border-left: 1px solid #E0E0E0;
+    height: 8.5em;
+}
+
+.social-btn {
+    margin-bottom:4px;
+}
+
+/*
+    Responsive
+*/
+
+@media (max-device-width:480px), (max-width:480px) {
+    #footer-news {
+        display:none;
+    }
+    #footer-col-set {
+        display:block;
+    }
+    .footer-col {
+        border-left: 0px solid #E0E0E0;
+        float: none;
+        display: block;
+        padding-top:18px;
+    }
+    #footer-col-set .footer-col:first-child {
+        padding-top:0px;
+    }
+    #generate-button-container {
+        text-align:center;
+        margin:0px;
+    }
+}

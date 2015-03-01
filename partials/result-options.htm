@@ -1,0 +1,29 @@
+<div class='text-center kla-result-opts'>
+    <!--<h4 class='text-center kla-display-opts-header'>Result Table Display Options</h4>-->
+    <div class="btn-group text-left">
+        <button data-toggle="dropdown" class="btn dropdown-toggle"  data-placeholder="false">Units: {{source.units}}<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li ng-repeat="curUnit in source.allowedUnits">
+                <input type="radio" name='kla-opt{{settings.id}}-unit-radio' id="kla-opt{{settings.id}}-units-{{$index}}" ng-model="source.units" value='{{curUnit}}'><label for="kla-opt{{settings.id}}-units-{{$index}}" >{{curUnit}}</label>
+            </li>
+        </ul>
+    </div> 
+
+    <div class="btn-group text-left" style='display:{{settings.showDisplayType}}'>
+        <button data-toggle="dropdown" class="btn dropdown-toggle"  data-placeholder="false">Display: {{source.displayType}}<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li ng-repeat="(dType, dValue) in source.displayData track by $index">
+                <input type="radio" name='kla-opt{{settings.id}}-unit-radio' id="kla-opt{{settings.id}}-d-{{$index}}" ng-model="source.displayType" value='{{dType}}'><label for="kla-opt{{settings.id}}-d-{{$index}}" >{{dType}}</label>
+            </li>
+        </ul>
+    </div> 
+
+    <div class="btn-group text-left">
+        <button data-toggle="dropdown" class="btn dropdown-toggle"  data-placeholder="false">Keyboards <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li ng-repeat="layout in source.seriesData.allSeriesLabels">
+                <input type="checkbox" id="kla-opt{{settings.id}}-dd-{{$index}}" ng-model="source.rawSeriesData[$index].visible"><label for="kla-opt{{settings.id}}-dd-{{$index}}" >{{layout}}</label>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,213 @@
+<div>
+    <div class="jumbotron subhead">
+        <h1>Results</h1>
+        <p class="lead">See each tab for detailed analysis<p>
+    </div>
+    <ul class='nav nav-pills' id='main-output-tabs'>
+        <li class='kla-pill active'><a ng-click='tabSwitch($event, "summary")' href='#summary'>Summary</a></li>
+        <li class='kla-pill'><a ng-click='tabSwitch($event, "distance")' href='#distance'>Distance</a></li>
+        <li class='kla-pill'><a ng-click='tabSwitch($event, "fingerUsage")' href='#fingerUsage'>Finger Usage</a></li>
+        <li class='kla-pill'><a ng-click='tabSwitch($event, "rowUsage")' href='#rowUsage'>Row Usage</a></li>
+        <li class='kla-pill'><a ng-click='tabSwitch($event, "heatMaps")' href='#heatMaps'>Heat Maps</a></li>
+        <li class='kla-pill'><a ng-click='tabSwitch($event, "miscellaneous")' href='#miscellaneous'>Miscellaneous</a></li>
+        <li class='kla-pill'><a ng-click='tabSwitch($event, "personalized")' href='#personalized'>Personalized</a></li>
+    </ul>
+    <div class='tab-content'>
+        <div class='tab-pane active' id='summary'>
+            <div style='text-align:center; position:relative;'>
+                <img src='./img/trophy-32.png' style='display:inline-block; position:relative; top:-4px;margin-right:6px;'>
+                <div style='display:inline-block' class='best-layout'>{{results.summary.bestLayout}}</div>
+                
+            </div>
+            <p>
+                <div class="kla-result-table">
+
+                    <table class='kla-table-data kla-table-data-narrow'>
+                        <thead>
+                            <tr>
+                                <th width="50px">
+                                    <div class='text-right'>Rank</div>
+                                </th>
+                                <th width="20px">
+                                </th>
+                                <th>
+                                    <div class='text-left'>Layout</div>
+                                </th>
+                                <th>
+                                    <div class='text-right'>Score</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                            <tr ng-repeat="layout in results.summary.rankedLayouts" >
+                                <td ><div class='text-right'>#{{$index + 1}}</div></td>
+                                <td></td>
+                                <td ><div class='text-left'>{{layout.layoutName}}</div></td>
+                                <td><div class='text-right'>{{layout.score.toFixed(2)}}</div></td>
+                            </tr>
+                    
+                        </tbody>
+                    </table>
+
+                </div>
+            </p>
+            <p>
+                The optimal layout score is based on a weighed calculation that factors in the 
+                distance your fingers moved (33%), 
+                how often you use particular fingers (33%),
+                and how often you switch fingers and hands while typing (34%).
+            </p>
+            <p>
+                <div class='text-center' ng-show='share.showSection'>
+                    <button class='btn' style='position:relative;margin-top:-12px;margin-right:10px;' ng-click='getUrlToShare()'>Get URL to Share Results →</button>
+                    <input type='text' ng-model='share.url' style='width:475px;' />
+                </div>
+            </p>
+        </div>
+        <div class='tab-pane' id='distance' style='position:relative'>
+            <seriesbarchart width="940px" height="300px" source="results.distance"></seriesbarchart>
+            <resulttable source='results.distance'></resulttable>
+            <resultoptions source='results.distance'></resultoptions>
+
+            <div class='kla-piecharts'>
+                <h4 class='text-center kla-pie-header'>Pie Chart Visualizations</h4>
+
+                <div ng-repeat="layout in results.distance.seriesData.seriesLabels track by $id($index)" class='kla-pie-container'>
+                    <piechart width="400px" height="330px" source="results.distance" series="$index"></piechart>
+                    <div class='kla-pie-label'>{{layout}}</div>
+                </div>
+            </div>
+        </div>
+        <div class='tab-pane' id='fingerUsage'>
+            <seriesbarchart width="940px" height="300px" source="results.fingerUsage"></seriesbarchart>
+            <resulttable source='results.fingerUsage'></resulttable>
+            <resultoptions source='results.fingerUsage'></resultoptions>
+
+            <div class='kla-piecharts'>
+                <h4 class='text-center kla-display-opts-header'>Pie Chart Visualizations</h4>
+
+                <div ng-repeat="layout in results.fingerUsage.seriesData.seriesLabels track by $id($index)" class='kla-pie-container'>
+                    <piechart width="400px" height="330px" source="results.fingerUsage" series="$index"></piechart>
+                    <div class='kla-pie-label'>{{layout}}</div>
+                </div>
+            </div>
+        </div>
+        <div class='tab-pane' id='rowUsage'>
+            <seriesbarchart width="940px" height="300px" source="results.rowUsage"></seriesbarchart>
+            <resulttable source='results.rowUsage'></resulttable>
+            <resultoptions source='results.rowUsage'></resultoptions>
+
+            <div class='kla-piecharts'>
+                <h4 class='text-center kla-display-opts-header'>Pie Chart Visualizations</h4>
+
+                <div ng-repeat="layout in results.rowUsage.seriesData.seriesLabels track by $id($index)" class='kla-pie-container'>
+                    <piechart width="400px" height="330px" source="results.rowUsage" series="$index"></piechart>
+                    <div class='kla-pie-label'>{{layout}}</div>
+                </div>
+            </div>
+        </div>
+        <div class='tab-pane' id='heatMaps'>
+            <div class='text-center'>
+                <div id='heatmap-{{$index}}' ng-repeat='layout in results.layouts' class="keyboard">
+                    <keyboardheatmap current="currentHeatmap" myindex="{{$index}}" layout="layout" keydata="results.keyData[$index]"></keyboardheatmap>
+                </div>
+
+                <paginate start="1" stop="6" handler="switchHeatmap"></paginate>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Key</th>
+                            <th>Presses</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr ng-repeat="key in results.keyData[currentHeatmap]  | orderBy:['-count', 'primary']">
+                            <td>
+                                #{{$index+1}}
+                            </td>
+                            <td>
+                                {{getKeyLabel(key.primary, key.shift, key.altGr, key.shiftAltGr)}}
+                            </td>
+                            <td>
+                                {{key.count}}
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <div class='tab-pane' id='miscellaneous'>
+            <div class="kla-misc-box">
+                <strong>Consecutive Finger Use</strong> - 
+                How often the same finger is used to type a key as was used to type the previous key.
+                An example of this would be typing "fg" on QWERTY. When looking at "g", the program notes that  the index finger
+                was also previously used to type "f". The lower the number the better.
+                <p></p>
+                <label><input class='kla-result-checkbox' ng-model="settings.cfuIgnoreDups" type="checkbox" /> Include instances of the same key being pressed twice in a row (example: typing "ff").</label>
+            </div>
+            <seriesbarchart width="940px" height="300px" source="results.consecFingerPress"></seriesbarchart>
+            <resulttable source='results.consecFingerPress'></resulttable>
+            <resultoptions source='results.consecFingerPress' displayopts=false></resultoptions>
+
+            <div class='kla-misc-spacing'></div>
+
+            <div class="kla-misc-box">
+                <strong>Consecutive Hand and Thumb Use</strong> - 
+                How often the same hand was used to type a key as was used to type the previous key (thumbs are grouped as a separate entity). An example of this would be typing "af" on QWERTY. When looking at "f", the program notes that the left hand was also previously used to type "a". The lower the number the better.
+                <p></p>
+                <label><input class='kla-result-checkbox' ng-model="settings.chuIgnoreDups" type="checkbox" /> Include instances of the same key being pressed twice in a row (example: typing "ff").</label>
+            </div>
+            <seriesbarchart width="940px" height="300px" source="results.consecHandPress"></seriesbarchart>
+            <resulttable source='results.consecHandPress'></resulttable>
+            <resultoptions source='results.consecHandPress' displayopts=false></resultoptions>
+
+            <div class='kla-misc-spacing'></div>
+
+            <div class="kla-misc-box">
+                <strong>Modifier Key Use</strong> - 
+                How often the Shift, AltGr, and Shift+AltGr modifiers are used with characters in the text.
+            </div>
+            <seriesbarchart width="940px" height="300px" source="results.modifierUse"></seriesbarchart>
+            <resulttable source='results.modifierUse'></resulttable>
+            <resultoptions source='results.modifierUse' displayopts=false></resultoptions>
+            <div style='padding:30px;font-size:16px;' class='text-center'>
+                <p>
+                    Additional statistics will be coming to this section later this year. 
+                </p>
+                <p>
+                    I hate these sort of place holder messages, however, I figured I'd make a note so you'd know where to look in coming updates.
+                </p>
+                <p>
+                    If you have any suggestions feel free to email me.
+                </p>
+            </div>
+        </div>
+        <div class='tab-pane' id='personalized'>
+            <div class='text-center'>
+                <keyboarddisplay layout='results.personalized' class='show-inline'><keyboarddisplay>
+            </div>
+            <div style='margin:0 auto;width:750px'>
+                <p >
+                    <h3 class='text-center'>Personalized Layout</h3>
+                </p>
+                <p>
+                    And now just for fun, here is what the optimal layout of your keyboard would be if it were tailored to fit the way you type. This personalized layout is based only on a frequency analysis. It places your most commonly typed characters in the most optimal spots and your least typed characters in the least optimal spots - however, for practical reasons, I have frozen certain keys. The more you type, the more accurate this layout will be. I should note that the generated design does not take into account how often you switch hands while typing or how close together common letter pairings are. Most modern layouts take into account ergonomic considerations as well as key usage.
+                </p>
+                <p>
+                    Initially I was going to leave out this feature for the latest version of the analyzer, but I had some requests to keep it so I did. Since a complete ergonomic analysis isn't taken into account, the generated layout should be taken with a grain of salt, but it can give you some ideas of good key placements.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class='text-center try-again-btn'>
+        <button class="btn btn-large" type="button" ng-click="returnToInput()">Try Another Input</button>
+    </div>
+
+</div>

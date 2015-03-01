@@ -1,0 +1,271 @@
+<div>
+    <div class="jumbotron subhead">
+        <h1>Configuration</h1>
+        <p class="lead"><strong>Click</strong> or <strong>Drag</strong> the keys on the keyboard below<p>
+    </div>
+    <p></p>
+
+	<div id='kb-config-container'>
+
+	    <keyboardeditor name="0" current="current"></keyboardeditor>
+	    <keyboardeditor name="1" current="current"></keyboardeditor>
+	    <keyboardeditor name="2" current="current"></keyboardeditor>
+	    <keyboardeditor name="3" current="current"></keyboardeditor>
+	    <keyboardeditor name="4" current="current"></keyboardeditor>
+
+	    <table class="kb-config-table">
+	        <thead>
+	            <th>
+	                Properties
+	            </th>
+	            <th>
+	                Data
+	            </th>
+	        </thead>
+	        <tbody>
+	            <tr>
+	                <td class="kb-config-td">
+	                    <div class="kb-config-editor">
+	                        <form class='form-horizontal'>
+
+	                            <div class='control-group'>
+	                                <label class='control-label' for="kb-config-name">Name:</label>
+	                                <div class='controls'>
+	                                    <input id="kb-config-name" class="kb-config-name" type="text" ng-model="keyboards.getLayout(current).keySet.label"/>
+	                                </div>
+	                            </div>
+
+	                            <div class='control-group'>
+	                                <label class='control-label' for="kb-config-kbtype">Submitted By:</label>
+	                                <div class='controls'>
+	                                    <div style='padding:5px 7px;'>{{keyboards.getLayout(current).keySet.author}}</div>
+	                                </div>
+	                            </div>
+
+	                            <div class='control-group'>
+	                                <label class='control-label' for="kb-config-kbtype">More Info:</label>
+	                                <div class='controls'>
+	                                	<div ng-show='!isMoreInfo(keyboards.getLayout(current).keySet)' style='padding:5px 7px;'>None</div>
+	                                	<div ng-show='isMoreInfo(keyboards.getLayout(current).keySet)' style='padding:5px 7px;'>
+	                                		<a href='{{keyboards.getLayout(current).keySet.moreInfoUrl}}'>{{keyboards.getLayout(current).keySet.moreInfoText}}</a>
+	                                	</div>
+	                                </div>
+	                            </div>
+
+	                        </form>
+	                    </div>
+	                </td>
+	                <td class="kb-config-td">
+
+	                    <div class="kb-config-editor">
+	                        <form class='form-horizontal'>
+
+	                            <div class='control-group'>
+	                                <label class='control-label'>Load/Save:</label>
+	                                <div class='controls'>
+	                                    <button class="kb-config-import btn" ng-click="showImportDialog()">Import</button>
+	                                    <button class="kb-config-export btn" ng-click="showExportDialog()">Export</button>
+	                                </div>
+	                            </div>
+
+	                            <div class='control-group'>
+	                                <label class='control-label' for="kb-config-select-list">Preset:</label>
+	                                <div class='controls'>
+	                                    <select id="kb-config-select-list" class="kb-config-select-list">
+	                                        <option value="none">[Select Layout]</option>
+	                                        <optgroup label="US-International Keyboards">
+	                                            <option value="standard.abcdef">ABCDEF</option>
+	                                            <option value="standard.acemak1">Acemak 1</option>
+	                                            <option value="standard.aoeyk">AOEYK</option>
+	                                            <!--<option value="standard.ashley-gudyr">ASHLEY-GUDYR</option>-->
+	                                            <option value="standard.anglian">Anglian</option>
+	                                            <option value="standard.arensito">Arensito</option>
+	                                            <option value="standard.asset">Asset</option>
+	                                            <option value="standard.balance-twelve">Balance Twelve</option>
+	                                            <option value="standard.bvofrak">BvoFRak EN V0.5</option>
+	                                            <option value="standard.bvofrak1">BvoFRak V1.0 FR</option>
+	                                            <option value="standard.eaton">EAton</option>
+	                                            <option value="standard.capewell">Capewell</option>
+	                                            <option value="standard.carpalxq">CarpalxQ</option>
+	                                            <option value="standard.chin">CHIN</option>
+	                                            <option value="standard.chin-programmer">CHIN-Programmer</option>
+	                                            <option value="standard.colemak">Colemak</option>
+	                                            <option value="standard.colemakuk">Colemak Mod UK</option>
+	                                            <option value="standard.colemakjph">Colemak Mod JPH</option>
+												<option value="standard.hieamtsrn">HIEAMTSRN</option>
+												<option value="standard.jppe">JPPE</option>
+												<option value="standard.kaeteker">Kaeteker's Modified Dvorak</option>
+	                                            <option value="standard.klausler">Klausler</option>
+	                                            <option value="standard.minimak8key">Minimak 8-key</option>
+	                                            <option value="standard.minimak12key">Minimak 12-key</option>
+	                                            <option value="standard.mtgap">MTGAP</option>
+	                                            <option value="standard.neo2">Neo 2 (v1)</option>
+	                                            <option value="standard.neo2_new">Neo 2 (v2)</option>
+	                                            <option value="standard.norman">Norman</option>
+	                                            <!--<option value="standard.nrstm">NRSTM</option>-->
+	                                            <option value="standard.oiseau">OISEAU</option>
+	                                            <option value="standard.ohdvorakl">One-handed Dvorak (Left)</option>
+	                                            <option value="standard.ohdvorakr">One-handed Dvorak (Right)</option>
+	                                            <option value="standard.colemakss">Programmer Colemak</option>
+	                                            <option value="standard.programmerDvorak">Programmer Dvorak</option>
+												<option value="standard.qgmlwy">QGMLWY</option>
+	                                            <option value="standard.qwerfj">QWERFJ</option>
+	                                            <option value="standard.qwerty">QWERTY</option>
+	                                            <option value="standard.qwerty-programmer">QWERTY-Programmer</option>
+	                                            <option value="standard.qwertymod">QWERTY: Top Row +Thumbs</option>
+	                                            <option value="standard.qwertywm">QWERTY: Wide Mod</option>
+	                                            <option value="standard.qwpr">QWPR</option>
+	                                            <option value="standard.russian">Russian</option>
+	                                            <option value="standard.simplifiedDvorak">Simplified Dvorak</option>
+	                                            <option value="standard.dvorakmb">Simplified Dvorak w/ Caps as Backspace</option>
+	                                            <option value="standard.dvorakmod">Simplified Dvorak UI Swap w/ Caps as Backspace</option>
+	                                            <option value="standard.spanish-dvorak">Spanish Dvorak</option>
+	                                            <option value="standard.stndc">STNDC</option>
+	                                            <option value="standard.tarmak1">Tarmak 1</option>
+	                                            <option value="standard.tarmak2">Tarmak 2</option>
+	                                            <option value="standard.tarmak3">Tarmak 3</option>
+	                                            <option value="standard.tarmak4">Tarmak 4</option>
+	                                            <option value="standard.typehack">TypeHacK</option>
+	                                            <option value="standard.typematrix">Typematrix</option>
+	                                            <option value="standard.vukeys">Vu Keys</option>
+	                                            <option value="standard.workman">Workman</option>
+	                                        </optgroup>
+	                                        <optgroup label="European Keyboards">
+	                                        	<option value="european.azerty">AZERTY</option>
+	                                        	<option value="european.bepo">BÉPO</option>
+	                                        	<option value="european.bvofrak1">BvoFRak V1.0 FR</option>
+	                                        	<option value="european.colemak_hu">Colemak HU</option>
+	                                            <option value="european.germandvorak2">German Dvorak Type II</option>
+	                                            <option value="european.qwerty">QWERTY</option>
+	                                            <option value="european.english-varient">QWERTY (English Varient)</option>
+	                                            <option value="european.qwerty-spanish">QWERTY (Spanish)</option>
+	                                            <option value="european.qwerty-estonian">QWERTY (Estonian)</option>
+	                                        </optgroup>
+	                                        <optgroup label="Ergodox Keyboards">
+	                                        	<option value="ergodox.colemak">Ergodox Colemak (v1)</option>
+	                                        	<option value="ergodox.colemak2">Ergodox Colemak (v2)</option>
+	                                        	<option value="ergodox.colemakjjt2">Ergodox Colemak (JJT)</option>
+	                                        	<option value="ergodox.colemakcub">Ergodox Colemak/Cub</option>
+	                                        	<option value="ergodox.gelatin">Ergodox Gelatin</option>
+	                                        	<option value="ergodox.qgmlwbcub">Ergodox QGMLWB/Cub</option>
+	                                        	<option value="ergodox.qgmlwycub">Ergodox QGMLWY/Cub</option>
+	                                        	<option value="ergodox.qwerty">Ergodox QWERTY</option>
+	                                        	<option value="ergodox.neo2_inprogress">Ergodox Neo 2 (in progress)</option>
+	                                        	<option value="ergodox.norman">Ergodox Norman</option>
+	                                        	<option value="ergodox.workman">Ergodox Workman for Programmers with cub@uanic Modifications</option>
+	                                        	<option value="ergodox.kinesis-advantage-colemak">Kinesis Advantage Colemak</option>
+	                                        </optgroup>
+
+	                                    </select>
+	                                    <button class="kb-config-load btn" ng-click="loadLayout()">Load</button>
+	                                </div>
+	                            </div>
+
+	                            <div class='control-group'>
+	                                <label class='control-label'>Share:</label>
+	                                <div class='controls'>
+	                                    <button class="btn" ng-click="submitDialog()">Submit Layout</button>
+	                                </div>
+	                            </div>
+
+	                        </form>
+	                    </div>
+
+	                </td>
+	            </tr>
+	        </tbody>
+	    </table>
+
+	    <paginate start="1" stop="5" handler="switchLayout"></paginate>
+
+	    <!-- import modal -->
+	    <div id='kb-config-import-dialog' class='modal hide fade' tabindex='-1' role='dialog' aria-labelledby='resultLabel' aria-hidden='true'>
+	        <div class='modal-header'>
+	            <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>x</button>
+	            <h3 id='resultLabel'>Import Layout</h3>
+	        </div>
+	        <div class='modal-body'>
+
+	            <textarea class='input-block-level kb-config-dialog-txt'></textarea>
+	            <p class='text-left'>
+	                Paste the text of a previously exported layout in the textbox above and press "Import" to load the layout.
+	            </p>
+	        </div>
+
+	        <div class='modal-footer'>
+	            <button class="btn" ng-click="importLayout()">Import</button>
+	            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+	        </div>
+	    </div>
+
+	    <!-- import modal -->
+	    <div id='kb-config-export-dialog' class='modal hide fade' tabindex='-1' role='dialog' aria-labelledby='resultLabel' aria-hidden='true'>
+	        <div class='modal-header'>
+	            <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>x</button>
+	            <h3 id='resultLabel'>Export Layout</h3>
+	        </div>
+	        <div class='modal-body'>
+
+	            <textarea class='input-block-level kb-config-dialog-txt'></textarea>
+	            <p class='text-left'>
+	                The above text represents the keyboard layout. You can come back to the app later and load this layout with this text using the "Import" feature.
+	            </p>
+	        </div>
+
+	        <div class='modal-footer'>
+	            <button class="btn" ng-click="selectAllExportText()">Select All</button>
+	            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+	        </div>
+	    </div>
+
+	    <!-- submit modal -->
+	    <div id='kb-config-submit-dialog' class='modal hide fade' tabindex='-1' role='dialog' aria-labelledby='resultLabel' aria-hidden='true'>
+	        <div class='modal-header'>
+	            <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>x</button>
+	            <h3 id='resultLabel'>Submit Layout</h3>
+	        </div>
+	        <div class='modal-body'>
+	        	<form class='form-horizontal' ng-show='!submitter.submitting'>
+			        <div class='control-group'>
+			            <label class='control-label' for='sub-name'>Name:</label>
+			            <div class='controls'>
+			                <input id='sub-name' class='input-block-level' type='text' ng-model='submitter.name'>
+			            </div>
+			        </div>
+
+			        <div class='control-group'>
+			            <label class='control-label' for='sub-email'>Email:</label>
+			            <div class='controls'>
+			                <input id='sub-email' class='input-block-level' type='text' ng-model='submitter.email'>
+			            </div>
+			        </div>
+
+			        <div class='control-group'>
+			            <label class='control-label' for='sub-url'>URL:</label>
+			            <div class='controls'>
+			                <input id='sub-url' class='input-block-level' type='text' ng-model='submitter.url'>
+			            </div>
+			        </div>
+		    	</form>
+
+		    	<div ng-show='submitter.submitting'>
+		            <p>
+		            	<img src='img/loading2.gif'>
+		            </p>
+		    	</div>
+
+	            <p class='text-left'>
+	                Fill out the above information and then press "Submit". After submitting, you're layout will be evaluated and then placed into the "Preset" option.
+	            </p>
+	        </div>
+
+	        <div class='modal-footer'>
+	            <button class="btn" ng-click="submitLayout()">Submit</button>
+	            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+	        </div>
+	    </div>
+
+	</div>
+
+
+</div>

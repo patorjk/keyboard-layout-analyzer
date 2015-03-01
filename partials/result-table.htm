@@ -1,0 +1,25 @@
+<table class='kla-table-data'>
+    <thead>
+        <tr>
+            <th>
+            </th>
+            <th ng-repeat="header in source.displayData[source.displayType]">
+                <div class='text-right kla-table-data-text kla-padding-left'>{{header.label}}</div>
+            </th>
+            <th>
+                <div class='text-right kla-table-data-text kla-padding-left'>Total</div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="layout in source.seriesData.seriesLabels">
+            <td><div class='text-right'>{{layout}}</div></td>
+            <td class='kla-table-data-text' ng-repeat="dataPoint in source.seriesData[$index] track by $id($index)">
+                <div class='text-right'>{{format(dataPoint)}}</div>
+            </td>
+            <td class='kla-table-data-text'>
+                <div class='text-right kla-padding-left-total'>{{format(source.seriesData[$index].total)}}</div>
+            </td>
+        </tr>
+    </tbody>
+</table>

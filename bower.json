@@ -1,0 +1,8 @@
+{
+  "name": "Keyboard Layout Analyzer",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": "latest",
+    "bootstrap": "http://twitter.github.com/bootstrap/assets/bootstrap.zip"
+  }
+}

@@ -11,16 +11,16 @@ source code: https://github.com/patorjk/keyboard-layout-analyzer
 -->
 
     <!-- vendor css -->
-    <link href="/common/vendor/bootstrap-flat/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="/common/vendor/jqplot/jquery.jqplot.min.css" rel="stylesheet">
+    <link href="./common/vendor/bootstrap-flat/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="./common/vendor/jqplot/jquery.jqplot.min.css" rel="stylesheet">
     
     <!-- app css -->
     <link rel="stylesheet" type="text/css" href="./css/main.css?2013.12" />
     <link rel="stylesheet" type="text/css" href="./css/kb-config.css?2013" />
-    <link href="/common/pat/keyboard/css/keyboard.css" rel="stylesheet">
+    <link href="./common/pat/keyboard/css/keyboard.css" rel="stylesheet">
 
     <!-- vendor responsive css -->
-    <!--<link href="/common/vendor/bootstrap/dist/css/bootstrap-responsive.css" rel="stylesheet">-->
+    <!--<link href="./common/vendor/bootstrap/dist/css/bootstrap-responsive.css" rel="stylesheet">-->
 
     <!--[if lte IE 8]>
     <script>
@@ -304,25 +304,25 @@ source code: https://github.com/patorjk/keyboard-layout-analyzer
 
     <!-- Vendor Scripts -->
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src='/common/vendor/jqplot/jquery.jqplot.min.js'></script>
-    <script src="/common/vendor/jqplot/plugins/jqplot.pieRenderer.min.js"></script>
-    <script src="/common/vendor/jqplot/plugins/jqplot.barRenderer.min.js"></script>
-    <script src="/common/vendor/jqplot/plugins/jqplot.categoryAxisRenderer.min.js"></script>
-    <script src="/common/vendor/jqplot/plugins/jqplot.pointLabels.min.js"></script>
+    <script src='./common/vendor/jqplot/jquery.jqplot.min.js'></script>
+    <script src="./common/vendor/jqplot/plugins/jqplot.pieRenderer.min.js"></script>
+    <script src="./common/vendor/jqplot/plugins/jqplot.barRenderer.min.js"></script>
+    <script src="./common/vendor/jqplot/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+    <script src="./common/vendor/jqplot/plugins/jqplot.pointLabels.min.js"></script>
 
-    <script src='/common/vendor/heatmap/heatmap.js'></script>
+    <script src='./common/vendor/heatmap/heatmap.js'></script>
 
-    <script src="/common/vendor/bootstrap-flat/dist/js/bootstrap.min.js"></script>
+    <script src="./common/vendor/bootstrap-flat/dist/js/bootstrap.min.js"></script>
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js'></script>
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js'></script>
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-animate.min.js'></script>
     <!--<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js'></script>-->
 
     <!-- Custom GUI -->
-    <script src="/common/pat/keyboard/js/kb.js?2013.09.16"></script>
-    <script src="/common/pat/keyboard/js/key.js?2014.01.01"></script>
-    <script src="/common/pat/keyboard/js/key-dialog.js?2013.09.14"></script>
-    <script src="/common/pat/keyboard/js/keyboard.js?2013.09.14"></script>
+    <script src="./common/pat/keyboard/js/kb.js?2013.09.16"></script>
+    <script src="./common/pat/keyboard/js/key.js?2014.01.01"></script>
+    <script src="./common/pat/keyboard/js/key-dialog.js?2013.09.14"></script>
+    <script src="./common/pat/keyboard/js/keyboard.js?2013.09.14"></script>
 
     <!-- App Scripts -->
     <script src="js/app.js?2014.01.01"></script>

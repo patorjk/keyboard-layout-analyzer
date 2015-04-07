@@ -1,0 +1,137 @@
+/*
+    keyboard
+*/
+
+.kb-keyboard-container {
+    position:relative;
+}
+
+.kb-keyboard-overlay {
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+
+/*
+    key dialog
+*/
+
+.kb-dialog-wrapper {
+    position:absolute;
+    border: 1px solid #888888;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.kb-dialog {
+	background-color: #5d7c9b;/*#5776CF;*/
+    width:314px;
+    margin:0;
+    padding:0px;
+    
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+
+    overflow:hidden;
+}
+
+.kb-dialog-titlebar {
+    text-align:center;
+    color:white;   
+    padding:4px;
+}
+
+.kb-dialog-form {
+    padding-top:4px;
+    background-color: #f7f7f7;
+}
+
+.kb-dialog-table {
+    border-spacing: "0px 4px";
+    width:300px;
+    margin-left:7px;	
+}
+
+.kb-dialog-btnpanel {
+    text-align:center;
+    padding:4px;
+    padding-bottom:8px;	
+}
+
+.kb-dialog-screenpad {
+	/*background-color:rgba(120,120,120,0.25);*/
+    position:absolute;
+    top:0;
+    left:0;
+    padding:0;
+    margin:0;
+    display:none;
+    z-index:200000;
+}
+
+.kb-dialog-screenbg {
+    position:absolute;
+    top:0;
+    left:0;
+    padding:0;
+    margin:0;
+}
+
+.kb-dialog-help {
+    padding:0;
+    margin:0;
+    width:16px;
+    height:16px;
+    background-image:url("../img/info-balloon.png");
+}
+
+.kb-dialog-inputbox {
+    width: 60px;
+}
+
+.kb-dialog-combobox {
+    width: 110px;
+}
+
+.kb-dialog-arrow-top {
+    position:absolute;
+    padding:0;
+    margin:0;
+    width:14px;
+    height:4px;
+	background-image:url("../img/arrow_black_down2.png");
+}
+
+.kb-dialog-arrow-bottom {
+    position:absolute;
+    padding:0;
+    margin:0;
+    width:14px;
+    height:4px;
+	background-image:url("../img/arrow_black_up2.png");
+}
+
+.kb-dialog-arrow-left {
+    position:absolute;
+    padding:0;
+    margin:0;
+    width:4px;
+    height:14px;
+    background-image:url("../img/arrow_black_right2.png");
+}
+
+.kb-dialog-arrow-right {
+    position:absolute;
+    padding:0;
+    margin:0;
+    width:4px;
+    height:14px;
+    background-image:url("../img/arrow_black_left2.png");
+}
+
+.unselectable {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+}

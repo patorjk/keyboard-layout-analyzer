@@ -18,4 +18,4 @@ It's been a long time since I've made any significant changes to this project. W
 
 Additionally, this project was written when I was learning Angular, so I've put a lot of logic in controller functions that should have gone in link functions. The directory structure also uses their old recommendations.
 
-This project isn't at the state I'd want it to be for a release, but every couple of months I get an email about the code, and if I wait unless I'm happy with it I'll be waiting forever.
+This project isn't at the state I'd want it to be for a release, but every couple of months I get an email about the code, and if I wait until I'm happy with it I'll be waiting forever.
